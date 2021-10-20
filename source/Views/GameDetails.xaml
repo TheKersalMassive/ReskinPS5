@@ -1,0 +1,124 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"                    
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    mc:Ignorable="d">
+
+    <Style TargetType="{x:Type GameDetails}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type GameDetails}">
+                    <Grid Background="{DynamicResource MainBackgourndBrush}"
+                          x:Name="PART_ViewHost"
+                          d:DesignWidth="{StaticResource DesignWidth}"
+                          d:DesignHeight="{StaticResource DesignHeight}"
+                          d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameIntance}"
+                          KeyboardNavigation.DirectionalNavigation="Contained"
+                          KeyboardNavigation.TabNavigation="Contained">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="7*" />
+                            <ColumnDefinition Width="3*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="7*" />
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="2*" />
+                        </Grid.RowDefinitions>
+                        
+                        <FadeImage HorizontalAlignment="Center" VerticalAlignment="Top"
+                                   Grid.ColumnSpan="3" Grid.RowSpan="3"
+                                   x:Name="PART_ImageBackground" />
+
+                        <Border Background="{DynamicResource GameDetailsOverlay}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3" >
+						 <Border.Style>
+                                <Style TargetType="Border">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding DisplayBackgroundImage}" Value="{x:Null}">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                        </Border>
+						
+				    <Image x:Name="GameLogo" Source="{Binding IconObject}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="1" Stretch="Uniform" MaxWidth="500" MaxHeight="200"  Margin="20,10" />
+					
+					<TextBlock x:Name="GameTitle" Style="{DynamicResource TextBlockBaseStyle}" 
+                                       Text="{Binding DisplayName}"
+                                       Foreground="White" 
+                                       FontSize="38" Margin="20,10" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.Column="1" Visibility="Collapsed" FontWeight="Bold" />																																												   
+
+                        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom">
+
+                            <StackPanel x:Name="PlatformSourceDetails" Orientation="Horizontal" Margin="20,20">
+                                <Border x:Name="GameSource" BorderBrush="{DynamicResource TextBrush}" BorderThickness="2" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <TextBlock x:Name="GameSourceTitle" Text="{Binding Source}" Margin="10,1,10,3"
+							            Foreground="{DynamicResource TextBrush}"
+							            FontSize="{DynamicResource FontSizeSmall}"  FontWeight="Bold"
+							            TextAlignment="Left" VerticalAlignment="Center"/>
+                                </Border>  
+								
+								<Border BorderBrush="{DynamicResource TextBrush}" BorderThickness="2" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <TextBlock Text="{Binding Platforms, Converter={StaticResource ListToStringConverter}}" Margin="10,1,10,3"
+							            Foreground="{DynamicResource TextBrush}"
+							            FontSize="{DynamicResource FontSizeSmall}"  FontWeight="Bold"
+							            TextAlignment="Left" VerticalAlignment="Center"/>
+                                </Border>
+                              
+								<Border x:Name="GameYear" BorderBrush="{DynamicResource TextBrush}" BorderThickness="2" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <TextBlock x:Name="GameYearTitle" Text="{Binding ReleaseYear}" Margin="10,1,10,3"
+							            Foreground="{DynamicResource TextBrush}"
+							            FontSize="{DynamicResource FontSizeSmall}"  FontWeight="Bold"
+							            TextAlignment="Left" VerticalAlignment="Center"/>
+                                </Border>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Margin="20,30,20,20" VerticalAlignment="Bottom">
+                                <ButtonEx x:Name="PART_ButtonContext" 
+                                          Margin="0" Width="300" HorizontalContentAlignment="Center" />
+                                <ButtonEx x:Name="PART_ButtonOptions" Style="{DynamicResource GameOptionsButton}"
+                                          Margin="20,0" HorizontalContentAlignment="Center" >
+										<Button.Content>
+											<TextBlock Text="&#xe712;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" FontSize="24"
+													   VerticalAlignment="Center" HorizontalAlignment="Center" />
+										</Button.Content>
+								</ButtonEx>
+                        </StackPanel>						
+					</StackPanel>
+
+                        <StackPanel x:Name="PlayedInfo" Grid.Row="1" Grid.Column="2" Background="#BD000000" Orientation="Horizontal" Margin="10" Height="100" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+
+                            <StackPanel Margin="30,15,20,15">
+                                <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               Text="{DynamicResource LOCTimePlayed}"
+                                               Margin="0,0,0,10" FontSize="{DynamicResource FontSizeSmall}" />
+                                <TextBlock Style="{DynamicResource ButtonTextBlockBaseStyle}"
+                                               Text="{Binding Playtime, Converter={StaticResource PlayTimeToStringConverter}}" />
+                            </StackPanel>
+                            <StackPanel Margin="20,15,20,15">
+                                <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               Text="{DynamicResource LOCGameLastActivityTitle}"
+                                               Margin="0,0,0,10" FontSize="{DynamicResource FontSizeSmall}" />
+                                <TextBlock Style="{DynamicResource ButtonTextBlockBaseStyle}"
+                                               Text="{Binding LastActivity, Converter={StaticResource DateTimeToLastPlayedConverter}}" />
+                            </StackPanel>                            
+                        </StackPanel>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding IconObject}" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Visible" TargetName="GameTitle" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=GameSourceTitle, Path=Text}" Value="">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="GameSource" />
+                        </DataTrigger>                        
+						<DataTrigger Binding="{Binding ElementName=GameYearTitle, Path=Text}" Value="">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="GameYear" />
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
