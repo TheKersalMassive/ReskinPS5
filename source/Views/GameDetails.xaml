@@ -22,7 +22,7 @@
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="7*" />
-                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="2*" />
                         </Grid.RowDefinitions>
                         
@@ -42,17 +42,17 @@
                             </Border.Style>
                         </Border>
 						
-				    <Image x:Name="GameLogo" Source="{Binding IconObject}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="1" Stretch="Uniform" MaxWidth="500" MaxHeight="200"  Margin="20,10" />
+				    <Image x:Name="GameLogo" Source="{Binding IconObject}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="1" Stretch="Uniform" MaxWidth="500" MaxHeight="200"  Margin="20,20" />
 					
 					<TextBlock x:Name="GameTitle" Style="{DynamicResource TextBlockBaseStyle}" 
                                        Text="{Binding DisplayName}"
                                        Foreground="White" 
-                                       FontSize="38" Margin="20,10" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.Column="1" Visibility="Collapsed" FontWeight="Bold" />																																												   
+                                       FontSize="38" Margin="20,20" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.Column="1" Visibility="Collapsed" FontWeight="Bold" />																																												   
 
-                        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom">
+                        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch">
 
                             <StackPanel x:Name="PlatformSourceDetails" Orientation="Horizontal" Margin="20,20">
-                                <Border x:Name="GameSource" BorderBrush="{DynamicResource TextBrush}" BorderThickness="2" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Border x:Name="GameSource" BorderBrush="{DynamicResource TextBrush}" BorderThickness="2" Margin="0,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
                                     <TextBlock x:Name="GameSourceTitle" Text="{Binding Source}" Margin="10,1,10,3"
 							            Foreground="{DynamicResource TextBrush}"
 							            FontSize="{DynamicResource FontSizeSmall}"  FontWeight="Bold"
@@ -87,7 +87,7 @@
                         </StackPanel>						
 					</StackPanel>
 
-                        <StackPanel x:Name="PlayedInfo" Grid.Row="1" Grid.Column="2" Background="#BD000000" Orientation="Horizontal" Margin="10" Height="100" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                        <StackPanel x:Name="PlayedInfo" Grid.Row="1" Grid.Column="2" Background="#BD000000" Orientation="Horizontal" Margin="10" MinHeight="100" VerticalAlignment="Bottom" HorizontalAlignment="Left">
 
                             <StackPanel Margin="30,15,20,15">
                                 <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
