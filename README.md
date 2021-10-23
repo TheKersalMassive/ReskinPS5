@@ -15,20 +15,32 @@ You must create a preset filter in Playnite and name it as one of the below to g
 Battle Net
 EA Play
 Epic Games Store
+Game Boy Advance
 GOG
+itch.io
+Nintendo 64
+Nintendo Gamecube
 Nintendo Switch
 Nintendo Wii U
 Nintendo Wii
 Nintendo
 Origin
+PC
+Playstation 2
 Playstation 3
 Playstation 4
 Playstation 5
 Playstation
+PSP
 Prime Gaming
 Rockstar
+Sega Genesis
+Sega Mega Drive
+Sega Dreamcast
+Super Nintendo
 Steam
 Ubisoft Connect
+Windows
 XBOX 360
 XBOX Classic
 XBOX Games Pass
