@@ -19,16 +19,17 @@
                           d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameIntance}">
                         <ContentPresenter />
 
-						<Border x:Name="MainBorder" Margin="-6" Opacity="0" BorderThickness="3" CornerRadius="3" Style="{DynamicResource AnimatedCoverBrush}" Visibility="Collapsed" >
+						<Border x:Name="MainBorder" Margin="-6" Opacity="0" BorderThickness="3" CornerRadius="3" Style="{DynamicResource AnimatedCoverBrush}" Tag="False" Visibility="Collapsed" >
 							</Border>
 								
-						<Border x:Name="FlashBorder" CornerRadius="0" Opacity="0" Style="{DynamicResource AnimatedFlashCover}"  Visibility="Collapsed">
+						<Border x:Name="FlashBorder" Opacity="0" Style="{DynamicResource AnimatedFlashCover}" Tag="False" Visibility="Collapsed">
 						</Border>							
 						
-						<Border x:Name="GameTitleBackground" Background="{DynamicResource GameTitleBrush}" CornerRadius="0" Height="150" Opacity="0.6" VerticalAlignment="Bottom" Visibility="Collapsed">
+						<Border x:Name="GameTitleBackground" Background="{DynamicResource GameTitleBrush}" Height="150" Opacity="0.6" VerticalAlignment="Bottom" Visibility="Collapsed">
 						</Border>						
-											
-						<Border x:Name="GameSource" Visibility="Collapsed" Opacity="1" BorderBrush="{DynamicResource TextBrush}" BorderThickness="2" Margin="12,45" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+							
+					<StackPanel VerticalAlignment="Bottom" Margin="12,15" >
+						<Border x:Name="GameSource" Visibility="Collapsed" Opacity="1" BorderBrush="{DynamicResource TextBrush}" BorderThickness="2" HorizontalAlignment="Left">
 							<TextBlock x:Name="GameSourceTitle" Text="{Binding Source}" TextTrimming="CharacterEllipsis" Margin="8,1,8,3"
 							Foreground="{DynamicResource TextBrush}"
 							FontSize="12"  FontWeight="Bold"
@@ -39,7 +40,8 @@
 						Style="{DynamicResource TextBlockBaseStyle}"
 						FontSize="{DynamicResource FontSizeSmall}"
 						VerticalAlignment="Bottom" 
-						TextAlignment="Left" Padding="12,15"  />
+						TextAlignment="Left" Margin="0,6,0,0"  />
+					</StackPanel>
 
 						<Border x:Name="IconInstall" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15" Width="20" Height="20" Visibility="Collapsed">
                                         <Image RenderOptions.BitmapScalingMode="Fant"
@@ -63,12 +65,14 @@
                         </DataTrigger>	
 					
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Tag" Value="True" TargetName="FlashBorder" />
+                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+							<Setter Property="Visibility" Value="Visible" TargetName="FlashBorder" />
+							<Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
 							<Setter Property="Visibility" Value="Visible" TargetName="GameTitle" />
 							<Setter Property="Visibility" Value="Visible" TargetName="GameSource" />
 							<Setter Property="Opacity" Value="1" TargetName="GameTitleBackground" />
 							<Setter Property="Visibility" Value="Visible" TargetName="GameTitleBackground" />
-							<Setter Property="Visibility" Value="Visible" TargetName="FlashBorder" />
 							<Setter Property="Visibility" Value="Collapsed" TargetName="IconInstall" />
                             <Setter Property="Canvas.ZIndex" Value="90" />
                         </Trigger>
