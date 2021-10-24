@@ -87,7 +87,7 @@
                                     <ButtonEx.Content>
                                         <TextBlock Text="&#xe896;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"                                                  
                                                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4"
-                                                   FontSize="30" />
+                                                   FontSize="28" />
                                     </ButtonEx.Content>
                                 </ButtonEx>
 <!-- notifications -->

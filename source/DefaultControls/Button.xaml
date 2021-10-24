@@ -18,7 +18,7 @@
                                 x:Name="MainBackground"/>
 						<Border x:Name="MainBorder" Margin="-6" 
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                Style="{DynamicResource AnimatedBorderBrush}" 
+                                Style="{DynamicResource AnimatedBorderBrush}" Tag="False"
                                 BorderThickness="3" CornerRadius="35" Visibility="Collapsed" />
 						<TextBlock Style="{DynamicResource ButtonTextBlockBaseStyle}"
                                    Foreground="{TemplateBinding Foreground}" FontWeight="SemiBold"
@@ -34,6 +34,7 @@
 						</Trigger>
 						<Trigger Property="IsFocused" Value="True">
                             <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+							<Setter Property="Tag" Value="True" TargetName="MainBorder" />
 							<Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
 							<Setter Property="Opacity" Value="1" TargetName="MainBackground" />
 							<Setter Property="Background" Value="{DynamicResource ControlBackgroundLightBrush}" TargetName="MainBackground" />
@@ -71,7 +72,7 @@
                                 x:Name="MainBackground"/>
 						<Border x:Name="MainBorder" Margin="-6" 
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                Style="{DynamicResource AnimatedBorderBrush}" 
+                                Style="{DynamicResource AnimatedBorderBrush}" Tag="False"
                                 BorderThickness="3" CornerRadius="60" Visibility="Collapsed" />
 						<TextBlock Style="{DynamicResource TextBlockBaseStyle}"
                                    Foreground="{TemplateBinding Foreground}"
@@ -87,6 +88,7 @@
 						</Trigger>
 						<Trigger Property="IsFocused" Value="True">
                             <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+							<Setter Property="Tag" Value="True" TargetName="MainBorder" />
 							<Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
 							<Setter Property="Opacity" Value="1" TargetName="MainBackground" />
 							<Setter Property="Background" Value="{DynamicResource ControlBackgroundLightBrush}" TargetName="MainBackground" />
