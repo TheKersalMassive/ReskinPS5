@@ -107,36 +107,36 @@
 			</Setter.Value>
 		</Setter>
 			<Style.Triggers>
-								<DataTrigger Binding="{Binding Categories[0].Name}" Value="XBOX">
-									<Setter Property="BorderBrush">
-										<Setter.Value>
-											<LinearGradientBrush>
-												<GradientStop Color="{DynamicResource BorderDark}" Offset="0"/>
-												<GradientStop Color="{DynamicResource XBOX}" Offset="1"/>
-											<LinearGradientBrush.RelativeTransform>
-												<RotateTransform CenterX="0.5" CenterY="0.5" />
-											</LinearGradientBrush.RelativeTransform>
-											</LinearGradientBrush>
-										</Setter.Value>
-									</Setter>
-								</DataTrigger>				
-								<DataTrigger Binding="{Binding Categories[0].Name}" Value="Nintendo">
-									<Setter Property="BorderBrush">
-										<Setter.Value>
-											<LinearGradientBrush>
-												<GradientStop Color="{DynamicResource BorderDark}" Offset="0"/>
-												<GradientStop Color="{DynamicResource Nintendo}" Offset="1"/>
-											<LinearGradientBrush.RelativeTransform>
-												<RotateTransform CenterX="0.5" CenterY="0.5" />
-											</LinearGradientBrush.RelativeTransform>
-											</LinearGradientBrush>
-										</Setter.Value>
-									</Setter>
-								</DataTrigger>								
+					<DataTrigger Binding="{Binding Categories[0].Name}" Value="XBOX">
+						<Setter Property="BorderBrush">
+							<Setter.Value>
+								<LinearGradientBrush>
+									<GradientStop Color="{DynamicResource BorderDark}" Offset="0"/>
+									<GradientStop Color="{DynamicResource XBOX}" Offset="1"/>
+								<LinearGradientBrush.RelativeTransform>
+									<RotateTransform CenterX="0.5" CenterY="0.5" />
+								</LinearGradientBrush.RelativeTransform>
+								</LinearGradientBrush>
+							</Setter.Value>
+						</Setter>
+					</DataTrigger>				
+					<DataTrigger Binding="{Binding Categories[0].Name}" Value="Nintendo">
+						<Setter Property="BorderBrush">
+							<Setter.Value>
+								<LinearGradientBrush>
+									<GradientStop Color="{DynamicResource BorderDark}" Offset="0"/>
+									<GradientStop Color="{DynamicResource Nintendo}" Offset="1"/>
+								<LinearGradientBrush.RelativeTransform>
+									<RotateTransform CenterX="0.5" CenterY="0.5" />
+								</LinearGradientBrush.RelativeTransform>
+								</LinearGradientBrush>
+							</Setter.Value>
+						</Setter>
+					</DataTrigger>								
 
-			<DataTrigger Binding="{Binding ElementName=MainBorder, Path=Visibility}" Value="Visible">
+			<DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
 				<DataTrigger.EnterActions>
-					<BeginStoryboard>
+					<BeginStoryboard Name="StartCoverBrush">
 						<Storyboard>
 							<DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" BeginTime="0:0:0.1" Duration="0:0:0.3" />
 							<DoubleAnimation Storyboard.TargetProperty="(Border.BorderBrush).(Brush.RelativeTransform).(RotateTransform.Angle)" 
@@ -150,6 +150,7 @@
 							<DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0" />
 						</Storyboard>
 					</BeginStoryboard>
+					<StopStoryboard BeginStoryboardName="StartCoverBrush" />
 				</DataTrigger.ExitActions>
 			</DataTrigger>
 			</Style.Triggers>
@@ -168,9 +169,9 @@
 			</Setter.Value>
 		</Setter>
 			<Style.Triggers>
-			<DataTrigger Binding="{Binding ElementName=MainBorder, Path=Visibility}" Value="Visible">
+			<DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
 				<DataTrigger.EnterActions>
-					<BeginStoryboard>
+					<BeginStoryboard Name="StartBorderBrush">
 						<Storyboard>
 							<DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" BeginTime="0:0:0.1" Duration="0:0:0.3" />
 							<DoubleAnimation Storyboard.TargetProperty="(Border.BorderBrush).(Brush.RelativeTransform).(RotateTransform.Angle)" 
@@ -184,6 +185,7 @@
 							<DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0" />
 						</Storyboard>
 					</BeginStoryboard>
+							<StopStoryboard BeginStoryboardName="StartBorderBrush" />
 				</DataTrigger.ExitActions>
 			</DataTrigger>
 			</Style.Triggers>
@@ -200,9 +202,9 @@
 		</Setter.Value>
 	</Setter>
 		<Style.Triggers>
-		<DataTrigger Binding="{Binding ElementName=FlashBorder, Path=Visibility}" Value="Visible">
+		<DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
 			<DataTrigger.EnterActions>
-				<BeginStoryboard>
+				<BeginStoryboard Name="StartCoverFlash">
 					<Storyboard RepeatBehavior="5x" Duration="0:0:4.5">
 						<DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.2" />
 						<DoubleAnimation
@@ -212,6 +214,9 @@
 					</Storyboard>
 				</BeginStoryboard>
 			</DataTrigger.EnterActions>
+			<DataTrigger.ExitActions>
+					<StopStoryboard BeginStoryboardName="StartCoverFlash" />
+			</DataTrigger.ExitActions>
 		</DataTrigger>
 		</Style.Triggers>
 </Style>
@@ -226,15 +231,18 @@
 		</Setter.Value>
 	</Setter>
 		<Style.Triggers>
-		<DataTrigger Binding="{Binding ElementName=FlashMenuBorder, Path=Visibility}" Value="Visible">
+		<DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
 			<DataTrigger.EnterActions>
-				<BeginStoryboard>
+				<BeginStoryboard Name="StartFlashMenu">
 					<Storyboard RepeatBehavior="1x">
 						<DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.1" />
 						<DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" BeginTime="0:0:0.1" Duration="0:0:0.5" />
 					</Storyboard>
 				</BeginStoryboard>
 			</DataTrigger.EnterActions>
+			<DataTrigger.ExitActions>
+					<StopStoryboard BeginStoryboardName="StartFlashMenu" />
+			</DataTrigger.ExitActions>
 		</DataTrigger>
 		</Style.Triggers>
 </Style>
