@@ -14,7 +14,7 @@
                                VerticalAlignment="Center" HorizontalAlignment="Center"
                                Stretch="{Settings CoverArtStretch}" />
 
-						<Border Background="#AA000000" x:Name="BorderDarken" CornerRadius="5" Visibility="Collapsed" />
+						<Border Background="#AA000000" x:Name="BorderDarken" CornerRadius="0" Visibility="Collapsed" />
 					</Grid>
                     <ControlTemplate.Triggers>
 						<MultiDataTrigger>
