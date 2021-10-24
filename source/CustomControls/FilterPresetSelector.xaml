@@ -11,9 +11,9 @@
             <Setter.Value>
                 <ControlTemplate TargetType="CheckBoxEx">
 					<Grid x:Name="GridBox" Height="60" Opacity="0.2"> 
- 						<Border x:Name="MainBorder" Margin="0" BorderThickness="3" Opacity="0" CornerRadius="2" Style="{DynamicResource AnimatedBorderBrush}" Visibility="Collapsed" >
+ 						<Border x:Name="MainBorder" Margin="0" BorderThickness="3" Opacity="0" CornerRadius="2" Style="{DynamicResource AnimatedBorderBrush}" Tag="False" Visibility="Collapsed" >
 							</Border>
-						<Border x:Name="FlashMenuBorder" Margin="5" Style="{DynamicResource AnimatedFlashMenu}" Visibility="Collapsed">
+						<Border x:Name="FlashMenuBorder" Margin="5" Style="{DynamicResource AnimatedFlashMenu}" Tag="False" Visibility="Collapsed">
 							</Border>
 						<Image x:Name="FilterIcon" RenderOptions.BitmapScalingMode="Fant" Margin="20,5" Height="30" MaxWidth="150"
 						 Source="{ThemeFileBinding Name, PathFormat='Icons/Filters/{0}.png'}"/>						 
@@ -34,6 +34,8 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
 							<Setter Property="Opacity" Value="1" TargetName="GridBox" /> 
+							<Setter Property="Tag" Value="True" TargetName="MainBorder" />
+							<Setter Property="Tag" Value="True" TargetName="FlashMenuBorder" />
 							<Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
 							<Setter Property="Visibility" Value="Visible" TargetName="FlashMenuBorder" />	
                         </Trigger>
