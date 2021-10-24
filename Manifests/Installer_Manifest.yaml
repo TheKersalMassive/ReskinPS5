@@ -6,3 +6,11 @@ Packages:
     PackageUrl: https://github.com/TheKersalMassive/ReskinPS5/releases/download/v1.0.0/RePS5_3d09a5d1-a183-49da-adb6-e78428f7d90e_1_0.pthm
     Changelog:
       - Initial release for Playnite v9
+  - Version: 1.1
+    RequiredApiVersion: 2.0.0
+    ReleaseDate: 2021-10-24
+    PackageUrl: https://github.com/TheKersalMassive/ReskinPS5/releases/download/v1.1/RePS5_3d09a5d1-a183-49da-adb6-e78428f7d90e_1_1.pthm
+    Changelog:
+      - Added more filter preset icons, please see Readme on GitHub for details
+      - Optimised border animations
+      - Fix for time played padding and darkened corners for uninstalled games
