@@ -5,7 +5,7 @@ PS5 Reskin for Playnite V9
 
 ![Game](https://raw.githubusercontent.com/TheKersalMassive/ReskinPS5/main/Media/screenshot_02.jpg)
 
-![Border](https://raw.githubusercontent.com/TheKersalMassive/ReskinPS5/main/Media/custom_01.jpg)
+![Border](https://raw.githubusercontent.com/TheKersalMassive/ReskinPS5/main/Media/custom_02.jpg)
 
 # FAQ
 
@@ -15,7 +15,9 @@ You must create a preset filter in Playnite and name it as one of the below to g
 Battle Net
 EA Play
 Epic Games Store
+Game Boy
 Game Boy Advance
+Game Boy Color
 GOG
 itch.io
 Nintendo 64
@@ -46,6 +48,7 @@ XBOX Classic
 XBOX Games Pass
 XBOX Series X
 XBOX
+XCloud
 ```
 
 ## I don't see an icon that I want?
@@ -58,24 +61,30 @@ You have two options:
 - Create a **New Issue** and/or attach your icon if you want it added to the theme. Each icon submission will be reviewed and needs to match the general scheme and aesthtic of the theme
 
 
-## How do I get a green or blue border?
-There are currently 3 border colours supported as in the above screenshot
-You will need to assign the game to a category below depending on the colour scheme you want.
+## How do I get a custom colour border?
+V1.2 of the theme supports user custom border colours. 
 
-For example:
-- Default PS5 Color: **None**
-- XBOX Green: **XBOX**
-- Nintendo Switch Aqua: **Nintendo**
+1. In Desktop Mode, right click on your game(s) and click on ***Set Category***
 
-For example: If you want a green border for your XBOX games, you need to add the game to the category **XBOX**
+![image](https://user-images.githubusercontent.com/90322803/140609057-c76f0643-6c7b-40be-ba84-5bb4d434e4c5.png)
 
+2. Create a new category **Reskin** or Assign it if already created:
 
-## How do I assign a category?
-In desktop mode, right click on your game(s) and click on ***Set Category***
+![image](https://user-images.githubusercontent.com/90322803/140609072-a7d03430-86b0-4978-b1b3-a538728247bb.png)
 
+3. Edit your game(s) and add a *'Tag'* of the colour you want for your game(s).
+- For example, I want a red border, so I add a **Red** tag:
+
+![image](https://user-images.githubusercontent.com/90322803/140609117-327d217d-b20e-4847-af96-03d36d94f845.png)
+
+You can choose from the below colours as tags:
+
+![image](https://user-images.githubusercontent.com/90322803/140609155-4e22467c-489a-4801-9097-f1c252ab7470.png)
+
+*Note: Previously supported XBOX and Nintendo categories in v1.1 no longer work in V1.2 and above*
 
 ## How do I get the box above the game title when a game is selected?
-This is based on the 'Source' field, if you want to show 'Steam', 'Ubisoft' or 'Yuzu' as in the above screenshot, you will need to set these sources in the source field of your game(s).
+This is based on the **'Source'** field, if you want to show 'Steam', 'Ubisoft' or 'Yuzu' as in the above screenshot, you will need to set these sources in the source field of your game(s).
 
 
 ## Can you add support for any extensions or add-ons?
