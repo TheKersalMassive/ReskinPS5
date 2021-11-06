@@ -15,7 +15,7 @@
 							</Border>
 						<Border x:Name="FlashMenuBorder" Margin="5" Style="{DynamicResource AnimatedFlashMenu}" Tag="False" Visibility="Collapsed">
 							</Border>
-						<Image x:Name="FilterIcon" RenderOptions.BitmapScalingMode="Fant" Margin="20,5" Height="30" MaxWidth="150"
+						<Image x:Name="FilterIcon" RenderOptions.BitmapScalingMode="Fant" Margin="20,5" Height="30" MaxWidth="175"
 						 Source="{ThemeFileBinding Name, PathFormat='Icons/Filters/{0}.png'}"/>						 
 						<TextBlock Text="{Binding Name}" Margin="20,10,20,15" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"
                                    x:Name="TextContent" >
