@@ -47,7 +47,7 @@
 					<TextBlock x:Name="GameTitle" Style="{DynamicResource TextBlockBaseStyle}" 
                                        Text="{Binding DisplayName}"
                                        Foreground="White" 
-                                       FontSize="38" Margin="20,20" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.Column="1" Visibility="Collapsed" FontWeight="Bold" />																																												   
+                                       FontSize="42" Margin="20,0" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.Column="1" Visibility="Collapsed" FontWeight="Bold" />																																												   
 
                         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch">
 
@@ -55,21 +55,21 @@
                                 <Border x:Name="GameSource" BorderBrush="{DynamicResource TextBrush}" BorderThickness="2" Margin="0,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
                                     <TextBlock x:Name="GameSourceTitle" Text="{Binding Source}" Margin="10,1,10,3"
 							            Foreground="{DynamicResource TextBrush}"
-							            FontSize="{DynamicResource FontSizeSmall}"  FontWeight="Bold"
+							            FontSize="{DynamicResource FontSizeSmall}"  FontWeight="SemiBold"
 							            TextAlignment="Left" VerticalAlignment="Center"/>
                                 </Border>  
 								
 								<Border BorderBrush="{DynamicResource TextBrush}" BorderThickness="2" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
                                     <TextBlock Text="{Binding Platforms, Converter={StaticResource ListToStringConverter}}" Margin="10,1,10,3"
 							            Foreground="{DynamicResource TextBrush}"
-							            FontSize="{DynamicResource FontSizeSmall}"  FontWeight="Bold"
+							            FontSize="{DynamicResource FontSizeSmall}"  FontWeight="SemiBold"
 							            TextAlignment="Left" VerticalAlignment="Center"/>
                                 </Border>
                               
 								<Border x:Name="GameYear" BorderBrush="{DynamicResource TextBrush}" BorderThickness="2" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
                                     <TextBlock x:Name="GameYearTitle" Text="{Binding ReleaseYear}" Margin="10,1,10,3"
 							            Foreground="{DynamicResource TextBrush}"
-							            FontSize="{DynamicResource FontSizeSmall}"  FontWeight="Bold"
+							            FontSize="{DynamicResource FontSizeSmall}"  FontWeight="SemiBold"
 							            TextAlignment="Left" VerticalAlignment="Center"/>
                                 </Border>
                             </StackPanel>
