@@ -14,3 +14,11 @@ Packages:
       - Added more filter preset icons, please see Readme on GitHub for details
       - Optimised border animations
       - Fix for time played padding and darkened corners for uninstalled games
+  - Version: 1.2
+    RequiredApiVersion: 2.0.0
+    ReleaseDate: 2021-11-06
+    PackageUrl: https://github.com/TheKersalMassive/ReskinPS5/releases/download/v1.2/RePS5_3d09a5d1-a183-49da-adb6-e78428f7d90e_1_2.pthm
+    Changelog:
+      - Now supports custom user border colours, please see readme for details
+      - Added preset filter icons for Game Boy & Game Boy Color
+      - Added extra focus border animation
