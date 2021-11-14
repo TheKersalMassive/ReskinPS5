@@ -93,8 +93,8 @@ This is based on the **'Source'** field, if you want to show 'Steam', 'Ubisoft' 
 No as I don't use any extensions, plugins or add-ons. However, you can always mod the theme if you prefer.
 
 
-## I don't want to lose my icons
-Logos are only supported via the icons media, sorry.
+## I want to show game logos in the Game Details view
+You can either add game logos as an icon or you can use Extra Metadata Loader addon **[here](https://playnite.link/forum/thread-814.html)**
 
 
 ## I want to request a feature or report a bug
