@@ -21,6 +21,7 @@ Game Boy Color
 GOG
 itch.io
 Nintendo 64
+Nintendo 3DS
 Nintendo DS
 Nintendo Entertainment System
 Nintendo Gamecube
