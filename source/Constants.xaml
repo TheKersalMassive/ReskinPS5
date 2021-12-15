@@ -9,7 +9,7 @@
     <Color x:Key="BlackColor">#FF000000</Color>
     <Color x:Key="WhiteColor">#FFFFFFFF</Color>
 
-	<Color x:Key="GlyphColor">Pink</Color>
+	<Color x:Key="GlyphColor">#dbbda1</Color>
     <Color x:Key="GlyphLightColor">White</Color>
 	
 	<Color x:Key="BorderDark">#2a3039</Color>
@@ -119,11 +119,11 @@
 						<Storyboard>
 						 <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="00:00:00">
 							<SplineThicknessKeyFrame KeyTime="00:00:00" Value="0" />
-							<SplineThicknessKeyFrame KeyTime="00:00:00.2" Value="-6" />
+							<SplineThicknessKeyFrame KeyTime="00:00:00.3" Value="-6" />
 						 </ThicknessAnimationUsingKeyFrames>
 							<DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" BeginTime="0:0:0.1" Duration="0:0:0.3" />
 							<DoubleAnimation Storyboard.TargetProperty="(Border.BorderBrush).(Brush.RelativeTransform).(RotateTransform.Angle)" 
-											 From="0" To="359" Duration="00:00:4" RepeatBehavior="5x" />
+											 From="0" To="359" Duration="00:00:4" RepeatBehavior="10x" />
 						</Storyboard>
 					</BeginStoryboard>
 				</DataTrigger.EnterActions>
@@ -174,12 +174,13 @@
 			</Style.Triggers>
     </Style>     
 	
- <Style x:Key="AnimatedFlashCover" TargetType="Border">
+ <Style x:Key="AnimatedFlashFocus" TargetType="Border">
 	<Setter Property="Background">
 		<Setter.Value>
 			<LinearGradientBrush>
 				<GradientStop Color="#00000000" Offset="0.0"/>
 				<GradientStop Color="#40ffffff" Offset="0.0"/>
+				<GradientStop Color="#40ffffff" Offset="1.0"/>								  
 			</LinearGradientBrush>
 		</Setter.Value>
 	</Setter>
@@ -187,11 +188,11 @@
 		<DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
 			<DataTrigger.EnterActions>
 				<BeginStoryboard Name="StartCoverFlash">
-					<Storyboard RepeatBehavior="5x" Duration="0:0:4.5">
+					<Storyboard RepeatBehavior="1x">
 						<DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.2" />
 						<DoubleAnimation
 							Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[1].(GradientStop.Offset)"
-							From="0" To="1" Duration="0:0:0.6" />
+							From="0" To="1" BeginTime="0:0:0" Duration="0:0:0.6" />
 						<DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" BeginTime="0:0:0.6" Duration="0:0:0.3" />
 					</Storyboard>
 				</BeginStoryboard>
@@ -203,6 +204,35 @@
 		</Style.Triggers>
 </Style>
 
+<Style x:Key="AnimatedFlashCover" TargetType="Border">
+	<Setter Property="Background">
+		<Setter.Value>
+			<LinearGradientBrush>
+				<GradientStop Color="#00000000" Offset="0.0"/>
+				<GradientStop Color="#40ffffff" Offset="0.0"/>
+				<GradientStop Color="#40ffffff" Offset="1.0"/>
+			</LinearGradientBrush>
+		</Setter.Value>
+	</Setter>
+		<Style.Triggers>
+		<DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+			<DataTrigger.EnterActions>
+				<BeginStoryboard Name="StartCoverFlashRepeat">
+					<Storyboard RepeatBehavior="10x" BeginTime="0:0:4.5" Duration="0:0:4.5">
+						<DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5" />
+						<DoubleAnimation
+							Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[1].(GradientStop.Offset)"
+							From="0" To="1" BeginTime="0:0:0.5" Duration="0:0:0.6" />
+						<DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" BeginTime="0:0:1.1" Duration="0:0:0.3" />
+					</Storyboard>
+				</BeginStoryboard>
+			</DataTrigger.EnterActions>
+			<DataTrigger.ExitActions>
+					<StopStoryboard BeginStoryboardName="StartCoverFlashRepeat" />
+			</DataTrigger.ExitActions>
+		</DataTrigger>
+		</Style.Triggers>
+</Style>
 <Style x:Key="AnimatedFlashMenu" TargetType="Border">
 	<Setter Property="Background">
 		<Setter.Value>
