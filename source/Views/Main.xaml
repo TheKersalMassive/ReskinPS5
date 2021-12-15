@@ -21,7 +21,7 @@
 
                             <FadeImage x:Name="PART_ImageBackground" Grid.RowSpan="3"
                                        HorizontalAlignment="Center" VerticalAlignment="Top"/>
-
+									   
                             <Grid Grid.Row="0" Background="Transparent"
                                   Height="100">
                                 <Grid.ColumnDefinitions>
@@ -33,7 +33,7 @@
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
+																	 
                                     <ColumnDefinition Width="100" />
                                 </Grid.ColumnDefinitions>
 
@@ -66,11 +66,11 @@
                                         </Style>
                                     </ContentControl.Style>
                                 </ContentControl>
-								
-<!-- toggle	-->
-								<ToggleButtonEx x:Name="ToggleView" Style="{DynamicResource ToggleViewButton}" IsChecked="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}"
-											VerticalAlignment="Center" Margin="10,0" Height="48" MinWidth="48" Visibility="Visible" Grid.Column="7" >
-								</ToggleButtonEx>		
+
+			   
+																																					  
+																													
+						   
 <!-- battery -->
                                 <TextBlock x:Name="PART_TextBatteryPercentage" Style="{DynamicResource TextBlockBaseStyle}" FontSize="26"
                                        VerticalAlignment="Center" Margin="0,0,20,0" 
@@ -114,7 +114,7 @@
 <!-- menuicon -->
                                 <ButtonEx x:Name="PART_ButtonMainMenu" VerticalAlignment="Center"
                                           Style="{DynamicResource ButtonTopMenu}"
-                                          Grid.Column="8">
+                                          Grid.Column="7">
                                     <Button.Content>
                                         <Grid>
                                             <TextBlock Text="&#xe700;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"
@@ -163,8 +163,19 @@
                                 </TextBlock.Style>
                             </TextBlock>
 
-                            <Grid Grid.Row="2" Background="Transparent"
+                            <Grid Grid.Row="2" 
                               Height="100">
+							  
+							<Grid.Style>
+								<Style TargetType="Grid">
+									<Setter Property="Background" Value="Transparent" />
+									<Style.Triggers>
+										<DataTrigger Binding="{Binding ElementName=ToggleLayoutView, Path=IsFocused}" Value="True">
+											<Setter Property="Background" Value="#000004" />
+										</DataTrigger>
+									</Style.Triggers>
+								</Style>
+							</Grid.Style>	
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100" />
                                     <ColumnDefinition Width="Auto" />
@@ -174,6 +185,17 @@
                                 </Grid.ColumnDefinitions>
 
                                 <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+									<StackPanel.Style>
+										<Style TargetType="StackPanel">
+											<Setter Property="Visibility" Value="Visible" />
+											<Style.Triggers>
+												<DataTrigger Binding="{Binding ElementName=ToggleLayoutView, Path=IsFocused}" Value="True">
+													<Setter Property="Visibility" Value="Hidden" />
+												</DataTrigger>
+											</Style.Triggers>
+										</Style>
+									</StackPanel.Style>					
+
                                     <!--Install-->
                                     <ButtonEx x:Name="PART_ButtonInstall"
                                               Style="{DynamicResource ButtonBottomMenu}"
@@ -228,6 +250,11 @@
                                     <ContentControl Style="{DynamicResource ProgressIndicator}" Focusable="False"
                                                 Height="38" Width="38" VerticalAlignment="Center" />
                                 </StackPanel>
+
+<!-- QuickMenu -->
+								<ToggleButtonEx x:Name="ToggleLayoutView" Grid.ColumnSpan="5" Style="{DynamicResource ToggleViewButton}" IsChecked="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}"
+										VerticalAlignment="Center" Margin="0,0" Height="50" MinWidth="50" HorizontalAlignment="Center" >
+								</ToggleButtonEx>
                             </Grid>
                         </Grid>
 
