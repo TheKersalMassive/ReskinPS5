@@ -19,12 +19,12 @@
                           d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameIntance}">
                         <ContentPresenter />
 
-						<Border x:Name="MainBorder" Margin="-6" Opacity="0" BorderThickness="3" CornerRadius="3" Style="{DynamicResource AnimatedCoverBrush}" Tag="False" Visibility="Collapsed" >
+						<Border x:Name="MainBorder" Opacity="0" BorderThickness="3" CornerRadius="3" Style="{DynamicResource AnimatedCoverBrush}" Tag="False" Visibility="Collapsed" >
 							</Border>
 								
-						<Border x:Name="FlashBorder" Opacity="0" Style="{DynamicResource AnimatedFlashCover}" Tag="False" Visibility="Collapsed">
-						</Border>							
-						
+						<Border x:Name="FlashFocus" Opacity="0" CornerRadius="0" Style="{DynamicResource AnimatedFlashFocus}" Tag="False" Visibility="Collapsed" />
+						<Border x:Name="FlashCover" Opacity="0" Style="{DynamicResource AnimatedFlashCover}" Tag="False" Visibility="Collapsed" />
+
 						<Border x:Name="GameTitleBackground" Background="{DynamicResource GameTitleBrush}" Height="150" Opacity="0.6" VerticalAlignment="Bottom" Visibility="Collapsed">
 						</Border>						
 							
@@ -46,7 +46,7 @@
 						<Border x:Name="IconInstall" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15" Width="20" Height="20" Visibility="Collapsed">
                                         <Image RenderOptions.BitmapScalingMode="Fant"
                                            Source="{ThemeFile 'Images/icon-install.png'}" />
-						</Border>   
+						</Border>        
 
 					 </Grid>
 					
@@ -65,14 +65,16 @@
                         </DataTrigger>	
 					
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Tag" Value="True" TargetName="FlashBorder" />
+							<Setter Property="Tag" Value="True" TargetName="FlashFocus" />
+							<Setter Property="Tag" Value="True" TargetName="FlashCover" />
                             <Setter Property="Tag" Value="True" TargetName="MainBorder" />
-							<Setter Property="Visibility" Value="Visible" TargetName="FlashBorder" />
 							<Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
 							<Setter Property="Visibility" Value="Visible" TargetName="GameTitle" />
 							<Setter Property="Visibility" Value="Visible" TargetName="GameSource" />
 							<Setter Property="Opacity" Value="1" TargetName="GameTitleBackground" />
 							<Setter Property="Visibility" Value="Visible" TargetName="GameTitleBackground" />
+							<Setter Property="Visibility" Value="Visible" TargetName="FlashFocus" />
+							<Setter Property="Visibility" Value="Visible" TargetName="FlashCover" />												   
 							<Setter Property="Visibility" Value="Collapsed" TargetName="IconInstall" />
                             <Setter Property="Canvas.ZIndex" Value="90" />
                         </Trigger>
