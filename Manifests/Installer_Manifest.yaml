@@ -30,3 +30,11 @@ Packages:
       - Added support for Extra Metadata Loader icons
       - Added Nintendo DS & Nintendo Entertainment System preset icons
       - Changed scrollbar transparency for game background images 
+  - Version: 1.4
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2021-12-15
+    PackageUrl: https://github.com/TheKersalMassive/ReskinPS5/releases/download/v1.4/RePS5_3d09a5d1-a183-49da-adb6-e78428f7d90e_1_4.pthm
+    Changelog:
+      - Moved 'Toggle Layout' button to bottom Quick Menu
+      - Updated focus border animation and focus flash
+      - Added 'Nintendo 3DS' icon for filter presets
