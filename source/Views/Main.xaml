@@ -18,8 +18,10 @@
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-
-                            <FadeImage x:Name="PART_ImageBackground" Grid.RowSpan="3"
+							
+							<MediaElement x:Name="SoundIntro" Source="{ThemeFile 'audio/start.wav'}" MediaElementBehaviors.Repeat="False" />
+					
+							<FadeImage x:Name="PART_ImageBackground" Grid.RowSpan="3"
                                        HorizontalAlignment="Center" VerticalAlignment="Top"/>
 									   
                             <Grid Grid.Row="0" Background="Transparent"
@@ -33,7 +35,6 @@
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
-																	 
                                     <ColumnDefinition Width="100" />
                                 </Grid.ColumnDefinitions>
 
@@ -67,10 +68,6 @@
                                     </ContentControl.Style>
                                 </ContentControl>
 
-			   
-																																					  
-																													
-						   
 <!-- battery -->
                                 <TextBlock x:Name="PART_TextBatteryPercentage" Style="{DynamicResource TextBlockBaseStyle}" FontSize="26"
                                        VerticalAlignment="Center" Margin="0,0,20,0" 
@@ -144,6 +141,16 @@
                                            Background="Transparent" BorderThickness="0"
                                            DockPanel.Dock="Right" VerticalAlignment="Center"
                                            KeyboardNavigation.DirectionalNavigation="Once" >
+<!-- 										        <ListBox.Style>
+                                                    <Style TargetType="ListBoxEx">                                                        
+                                                        <Style.Triggers>
+															<DataTrigger Binding="{Settings Fullscreen.HorizontalLayout}" Value="True">
+                                                                <Setter Property="MaxHeight" Value="500"/>
+                                                                <Setter Property="VerticalAlignment" Value="Top"/>
+                                                            </DataTrigger>
+														</Style.Triggers>
+                                                    </Style>
+                                                </ListBox.Style> -->
 									</ListBoxEx>
                                 </DockPanel>
 			
