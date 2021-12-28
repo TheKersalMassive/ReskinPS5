@@ -15,7 +15,7 @@
                     <Grid Background="{TemplateBinding Background}">                        
 						<Border x:Name="MainBorder" Margin="0" BorderThickness="3" Opacity="1" CornerRadius="2" BorderBrush="{DynamicResource StaticBorderBrush}" Visibility="Collapsed" >
 							</Border>
-                            <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                            <TextBlock x:Name="Keycap" Style="{DynamicResource TextBlockBaseStyle}"
                                        Margin="15,0" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                        Foreground="{TemplateBinding Foreground}" >                            
@@ -25,6 +25,8 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
                             <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="FontWeight" Value="Bold" TargetName="Keycap" />
+                            <Setter Property="FontFamily" Value="Segoe UI" TargetName="Keycap" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Foreground" Value="{DynamicResource SelectionLightBrush}" />
