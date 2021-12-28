@@ -38,3 +38,12 @@ Packages:
       - Moved 'Toggle Layout' button to bottom Quick Menu
       - Updated focus border animation and focus flash
       - Added 'Nintendo 3DS' icon for filter presets
+  - Version: 1.5
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2021-12-28
+    PackageUrl: https://github.com/TheKersalMassive/ReskinPS5/releases/download/v1.5/RePS5_3d09a5d1-a183-49da-adb6-e78428f7d90e_1_5.pthm
+    Changelog:
+      - Added PS5 intro sound (may clash with Playnite Sounds extension)
+      - Play Actions Menu updated to match menu style
+      - Fixed the 'Layout Toggle' button visibility when not selected
+      - Updated Keyboard styling when focused
