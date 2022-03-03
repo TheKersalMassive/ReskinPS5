@@ -50,7 +50,6 @@
 
     <Style x:Key="NotificationsMenuHeaderText" BasedOn="{StaticResource TextBlockBaseStyle}" TargetType="TextBlock" >
         <Setter Property="FontSize" Value="24" />
-		<Setter Property="FontWeight" Value="Bold" />
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="Margin" Value="20,0,20,0" />
     </Style>

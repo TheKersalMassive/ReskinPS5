@@ -52,7 +52,7 @@
 
     <DataTemplate x:Key="SettingsMenuHeaderTemplate">
         <TextBlock Text="{DynamicResource LOCSettingsLabel}"
-                   FontSize="24" FontWeight="Bold" Style="{DynamicResource TextBlockBaseStyle}"
+                   FontSize="24" Style="{DynamicResource TextBlockBaseStyle}"
                    Margin="20,30" />
     </DataTemplate>
 <!-- submenu -->
