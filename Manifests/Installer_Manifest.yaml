@@ -47,3 +47,11 @@ Packages:
       - Play Actions Menu updated to match menu style
       - Fixed the 'Layout Toggle' button visibility when not selected
       - Updated Keyboard styling when focused
+  - Version: 1.6
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2022-03-04
+    PackageUrl: https://github.com/TheKersalMassive/ReskinPS5/releases/download/v1.6/RePS5_3d09a5d1-a183-49da-adb6-e78428f7d90e_1_6.pthm
+    Changelog:
+      - Added icons for 'Moonlight', 'Nvidia Gamestream' and 'Sega Master System'
+      - Updated to Game Details page format and layout
+      - This is probably the last update until the next major version of Playnite
