@@ -3,7 +3,7 @@ PS5 Reskin for Playnite V9
 
 ![Main](https://raw.githubusercontent.com/TheKersalMassive/ReskinPS5/main/Media/screenshot_01.jpg)
 
-![Game](https://raw.githubusercontent.com/TheKersalMassive/ReskinPS5/main/Media/screenshot_02.jpg)
+![Game](https://user-images.githubusercontent.com/90322803/156723512-9a938bc5-0990-460e-a139-f0ace105d9e5.jpg)
 
 ![Border](https://raw.githubusercontent.com/TheKersalMassive/ReskinPS5/main/Media/custom_02.jpg)
 
@@ -65,7 +65,8 @@ You have two options:
 
 
 ## How do I get a custom colour border?
-V1.2 of the theme supports user custom border colours. 
+
+Note: Custom border colours only work if you have one single tag assigned to a game
 
 1. In Desktop Mode, right click on your game(s) and click on ***Set Category***
 
