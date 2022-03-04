@@ -20,6 +20,7 @@ Game Boy Advance
 Game Boy Color
 GOG
 itch.io
+Moonlight
 Nintendo 64
 Nintendo 3DS
 Nintendo DS
@@ -29,6 +30,7 @@ Nintendo Switch
 Nintendo Wii U
 Nintendo Wii
 Nintendo
+Nvidia Gamestream
 Origin
 PC
 Playstation 2
@@ -40,6 +42,7 @@ PSP
 Prime Gaming
 Rockstar
 Sega Genesis
+Sega Master System
 Sega Mega Drive
 Sega Dreamcast
 Super Nintendo
