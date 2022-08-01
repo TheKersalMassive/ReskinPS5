@@ -52,7 +52,7 @@
                                                Text="{Binding Playtime, Converter={StaticResource PlayTimeToStringConverter}}" />
                                 </StackPanel>
 
-                                <StackPanel Margin="50,0,0,0">
+                                <StackPanel Margin="45,0,0,0">
                                     <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
                                                Text="{DynamicResource LOCGameLastActivityTitle}"
                                                Margin="0,0,0,5" FontWeight="SemiBold" FontSize="14"/>
@@ -60,36 +60,57 @@
                                                Text="{Binding LastActivity, Converter={StaticResource DateTimeToLastPlayedConverter}}" />
                                 </StackPanel>
 
-                                <StackPanel Margin="50,0,0,0">
+                                <StackPanel Margin="45,0,0,0">
                                     <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
                                                Text="Released"
                                                Margin="0,0,0,5" FontWeight="SemiBold" FontSize="14"/>
                                     <TextBlock x:Name="GameRelease" Style="{DynamicResource TextBlockBaseStyle}"
                                                Text="{Binding ReleaseYear}" />
-                                </StackPanel>
-
-<!--                                 <StackPanel Margin="50,0,0,0">
-                                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
-                                               Text="{DynamicResource LOCGamePlatformTitle}"
-                                               Margin="0,0,0,5" FontWeight="SemiBold" FontSize="14"/>
-                                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
-                                               Text="{Binding Platforms, Converter={StaticResource ListToStringConverter}}" />
-                                </StackPanel>  -->                               
+                                </StackPanel>                                
                             
-                            <StackPanel x:Name="GameSourceInfo" Margin="50,0,0,0">
+<!--                                 <StackPanel Margin="45,0,0,0">
                                     <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
-                                               Text="Source"
+                                               Text="{DynamicResource LOCGenreLabel}"
                                                Margin="0,0,0,5" FontWeight="SemiBold" FontSize="14"/>
-<!--                                     <TextBlock x:Name="GameSource" Style="{DynamicResource TextBlockBaseStyle}"
-                                               Text="{Binding Source}" /> -->
-								<Border x:Name="GameSourceBox" Background="Transparent" Height="{Binding Path=ActualHeight, ElementName=GameRelease}" BorderBrush="White" BorderThickness="2" Margin="0" CornerRadius="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <TextBlock x:Name="GameGenre" Style="{DynamicResource TextBlockBaseStyle}"
+                                               Text="{Binding Genres, Converter={StaticResource ListToStringConverter}}" />
+                                </StackPanel> -->
+                            
+<!--                                 <StackPanel Margin="45,0,0,0">
+                                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               Text="{DynamicResource LOCFeaturesLabel}"
+                                               Margin="0,0,0,5" FontWeight="SemiBold" FontSize="14"/>
+                                    <TextBlock x:Name="GameFeatures" Style="{DynamicResource TextBlockBaseStyle}"
+                                               Text="{Binding Features, Converter={StaticResource ListToStringConverter}}" />
+                                </StackPanel> -->
+
+								<StackPanel x:Name="GameSourceInfo" Margin="45,0,0,0">
+										<TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+												   Text="{DynamicResource LOCSourceLabel}"
+												   Margin="0,0,0,5" FontWeight="SemiBold" FontSize="14"/>	
+										<Border x:Name="GameSourceBox" Background="Transparent" Height="{Binding Path=ActualHeight, ElementName=GameRelease}" BorderBrush="White" BorderThickness="2" Margin="0" CornerRadius="0" VerticalAlignment="Center" HorizontalAlignment="Center">
 											<TextBlock x:Name="GameSource" Text="{Binding Source}" Margin="8,0,8,2"
-												Foreground="{DynamicResource TextBrush}"
-												FontSize="14"  FontWeight="SemiBold"
-												TextAlignment="Center" VerticalAlignment="Center">
+													Foreground="{DynamicResource TextBrush}"
+													FontSize="14"  FontWeight="SemiBold"
+													TextAlignment="Center" VerticalAlignment="Center">
 											</TextBlock>
-                                </Border>
-							</StackPanel>
+										</Border>
+                                </StackPanel>   								
+								
+								<StackPanel x:Name="GamePlatformInfo" Margin="45,0,0,0">
+										<TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+										   Text="{DynamicResource LOCGamePlatformTitle}"
+										   Margin="0,0,0,5" FontWeight="SemiBold" FontSize="14"/>	
+										<Border x:Name="GamePlatformBox" Background="{DynamicResource TextBrush}" Height="{Binding Path=ActualHeight, ElementName=GameRelease}" Margin="0" CornerRadius="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+													<TextBlock x:Name="GamePlatform" Text="{Binding Platforms, Converter={StaticResource ListToStringConverter}}" Margin="8,0,8,2"
+														Foreground="{DynamicResource TextBrushDark}"
+														FontSize="14"  FontWeight="SemiBold"
+														TextAlignment="Center" VerticalAlignment="Center">
+													</TextBlock>
+										</Border>	
+                                </StackPanel>   
+								                          
+						
                         </StackPanel>
 
 <!-- ExtraMetaDataLogo -->
