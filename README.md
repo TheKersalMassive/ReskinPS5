@@ -7,11 +7,16 @@ PS5 Reskin for Playnite V9
 
 ![Border](https://raw.githubusercontent.com/TheKersalMassive/ReskinPS5/main/Media/custom_02.jpg)
 
+![Labels](https://raw.githubusercontent.com/TheKersalMassive/ReskinPS5/main/Media/labels_01.jpg)
+
 # FAQ
 
 ## How I do get icons/logos at the top?
 You must create a preset filter in Playnite and name it as one of the below to get an icon:
 ```
+Atari
+Atari 2600
+Atari Jaguar
 Battle Net
 EA Play
 Epic Games Store
@@ -20,6 +25,7 @@ Game Boy Advance
 Game Boy Color
 GOG
 itch.io
+MAME
 Moonlight
 Nintendo 64
 Nintendo 3DS
@@ -38,15 +44,24 @@ Playstation 3
 Playstation 4
 Playstation 5
 Playstation
+PSOne
 PSP
+PS Vita
 Prime Gaming
 Rockstar
+Sega
+Sega CD
+Sega Dreamcast
 Sega Genesis
+Sega Genesis 32X
 Sega Master System
 Sega Mega Drive
-Sega Dreamcast
+Sega Mega Drive 32X
+Sega Saturn
+Sega Saturn JAP
 Super Nintendo
 Steam
+TurboGrafx-16
 Ubisoft Connect
 Windows
 XBOX 360
@@ -57,15 +72,35 @@ XBOX
 XCloud
 ```
 
-## I don't see an icon that I want?
+## How I do get platform label on the game cover?
+You must ensure you have the following Platforms assigned to a game Playnite:
+```
+Nintendo Switch
+Nintendo Wii U
+Nintendo Wii
+Playstation 2
+Playstation 3
+Playstation 4
+Playstation 5
+Playstation
+Playstation Portable
+Playstation Vita
+PSOne
+Sega Dreamcast
+XBOX Games Pass
+XBOX Series X
+XBOX One
+XBOX
+```
+
+## I don't see an icon or label that I want?
 You have two options:
 
-1. You can create an icon and place it in ***\Icons\Filters*** in the theme folder
+1. You can create an icon and place it in ***\Icons\Filters*** for Icons or ***\Icons\Labels*** or Platform labels in the theme folder
 - However you will need to backup your icons as every time the theme is updated it will overwrite the icons in that folder
 
 2. You can raise a request for a new icon/platform/logo **[here](https://github.com/TheKersalMassive/ReskinPS5/issues)**
 - Create a **New Issue** and/or attach your icon if you want it added to the theme. Each icon submission will be reviewed and needs to match the general scheme and aesthtic of the theme
-
 
 ## How do I get a custom colour border?
 
