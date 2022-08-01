@@ -23,18 +23,33 @@
 							</Border>
 								
 						<Border x:Name="FlashFocus" Opacity="0" CornerRadius="0" Style="{DynamicResource AnimatedFlashFocus}" Tag="False" Visibility="Collapsed" />
-						<Border x:Name="FlashCover" Opacity="0" Style="{DynamicResource AnimatedFlashCover}" Tag="False" Visibility="Collapsed" />
+						
+						<Border x:Name="FlashRepeat" Opacity="0" CornerRadius="0" Style="{DynamicResource AnimatedFlashRepeat}" Tag="False" Visibility="Collapsed"  >
+						</Border>
 
 						<Border x:Name="GameTitleBackground" Background="{DynamicResource GameTitleBrush}" Height="150" Opacity="0.6" VerticalAlignment="Bottom" Visibility="Collapsed">
 						</Border>						
 							
 					<StackPanel VerticalAlignment="Bottom" Margin="12,15" >
-						<Border x:Name="GameSource" Visibility="Collapsed" Opacity="1" BorderBrush="{DynamicResource TextBrush}" BorderThickness="2" HorizontalAlignment="Left">
-							<TextBlock x:Name="GameSourceTitle" Text="{Binding Source}" TextTrimming="CharacterEllipsis" Margin="8,1,8,3"
-							Foreground="{DynamicResource TextBrush}"
-							FontSize="12"  FontWeight="Bold"
-							TextAlignment="Left" VerticalAlignment="Center"/>
-						</Border>
+					
+						<StackPanel Margin="0,6,0,0" Orientation="Horizontal">
+							
+							 <Grid x:Name="GamePlatform" Height="27" Visibility="Collapsed" HorizontalAlignment="Left">
+								<Grid.OpacityMask>
+									<VisualBrush Visual="{Binding ElementName=Mask}" RenderOptions.BitmapScalingMode="LowQuality"/>
+								</Grid.OpacityMask>
+									<Border Name="Mask" Background="Black" CornerRadius="3"/>
+								    <Image x:Name="GamePlatformImage" Source="{ThemeFileBinding Game.Platforms/Name, PathFormat='Icons/Labels/{0}.png'}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderOptions.BitmapScalingMode="Fant"/>
+							</Grid>
+							
+							<Border x:Name="GameSource" Visibility="Collapsed" Margin="5,0" Opacity="1" BorderBrush="{DynamicResource TextBrush}" BorderThickness="2" HorizontalAlignment="Left">
+								<TextBlock x:Name="GameSourceTitle" Text="{Binding Source}" TextTrimming="CharacterEllipsis" Margin="8,1,8,3"
+								Foreground="{DynamicResource TextBrush}"
+								FontSize="12"  FontWeight="Bold"
+								TextAlignment="Left" VerticalAlignment="Center"/>
+							</Border>						
+
+							</StackPanel>
 						
 						<TextBlock x:Name="GameTitle" Visibility="Collapsed" Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis"
 						Style="{DynamicResource TextBlockBaseStyle}"
@@ -66,22 +81,27 @@
 					
                         <Trigger Property="IsFocused" Value="True">
 							<Setter Property="Tag" Value="True" TargetName="FlashFocus" />
-							<Setter Property="Tag" Value="True" TargetName="FlashCover" />
+							<Setter Property="Tag" Value="True" TargetName="FlashRepeat" />
                             <Setter Property="Tag" Value="True" TargetName="MainBorder" />
 							<Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
 							<Setter Property="Visibility" Value="Visible" TargetName="GameTitle" />
 							<Setter Property="Visibility" Value="Visible" TargetName="GameSource" />
+							<Setter Property="Visibility" Value="Visible" TargetName="GamePlatform" />
 							<Setter Property="Opacity" Value="1" TargetName="GameTitleBackground" />
 							<Setter Property="Visibility" Value="Visible" TargetName="GameTitleBackground" />
-							<Setter Property="Visibility" Value="Visible" TargetName="FlashFocus" />
-							<Setter Property="Visibility" Value="Visible" TargetName="FlashCover" />												   
+							<Setter Property="Visibility" Value="Visible" TargetName="FlashFocus" />									   
+							<Setter Property="Visibility" Value="Visible" TargetName="FlashRepeat" />									   
 							<Setter Property="Visibility" Value="Collapsed" TargetName="IconInstall" />
                             <Setter Property="Canvas.ZIndex" Value="90" />
                         </Trigger>
 									
 						<DataTrigger Binding="{Binding ElementName=GameSourceTitle, Path=Text}" Value="">
 							<Setter Property="Visibility" Value="Collapsed" TargetName="GameSource" />
-                        </DataTrigger>
+                        </DataTrigger>						
+
+						<DataTrigger Binding="{Binding ElementName=GamePlatformImage, Path=Source}" Value="{x:Null}">
+							<Setter Property="Visibility" Value="Collapsed" TargetName="GamePlatform" />
+						</DataTrigger>
 
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
