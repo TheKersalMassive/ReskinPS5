@@ -54,4 +54,13 @@ Packages:
     Changelog:
       - Added icons for 'Moonlight', 'Nvidia Gamestream' and 'Sega Master System'
       - Updated to Game Details page format and layout
+  - Version: 1.7
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2022-03-04
+    PackageUrl: https://github.com/TheKersalMassive/ReskinPS5/releases/download/v1.7/RePS5_3d09a5d1-a183-49da-adb6-e78428f7d90e_1_7.pthm
+    Changelog:
+      - New Platform Labels (See Readme on Github for details)
+      - Added new icons for:Atari, Atari 2600, Atari Jaguar, MAME, PSOne, PS Vita, Sega Saturn, Sega Saturn JAP, Sega CD, Sega Genesis 32X, Sega Mega Drive 32X, Sega, TurboGrafx-16
+      - Updated focus animations when hovering on game
+      - Added Platform details to Game Details page
       - This is probably the last update until the next major version of Playnite
