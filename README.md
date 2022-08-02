@@ -93,6 +93,12 @@ XBOX One
 XBOX
 ```
 
+## I don't like the labels - How do I remove them?
+You can delete the labels in the theme installation folder under ***\Icons\Labels***
+
+To open the theme installation folder go to:
+*Add-ons (F9) > Installed > Themes Fullscreen > Reskin PS5 > Installation Folder*
+
 ## I don't see an icon or label that I want?
 You have two options:
 
