@@ -13,9 +13,9 @@
             <Setter.Value>
                 <ControlTemplate TargetType="CheckBox">
                     <Grid Background="{TemplateBinding Background}">
-						<Border x:Name="MainBorder" Margin="0" BorderThickness="3" Opacity="0" CornerRadius="2" Style="{DynamicResource AnimatedBorderBrush}" Tag="False" Visibility="Collapsed" >
+						<Border x:Name="MainBorder" Margin="0" Opacity="0" CornerRadius="2" Style="{DynamicResource AnimatedBorderBrush}" Tag="False" Visibility="Collapsed" >
 							</Border>
-						<Border x:Name="FlashMenuBorder" Margin="5" Style="{DynamicResource AnimatedFlashMenu}" Tag="False" Visibility="Collapsed">
+						<Border x:Name="FlashMenuBorder" Style="{DynamicResource AnimatedFlashMenu}" Tag="False" Visibility="Collapsed">
 							</Border>		
 						<Grid Margin="{TemplateBinding Padding}">
                             <Grid.ColumnDefinitions>
