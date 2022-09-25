@@ -19,7 +19,7 @@
                           d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameIntance}">
                         <ContentPresenter />
 
-						<Border x:Name="MainBorder" Opacity="0" BorderThickness="3" CornerRadius="3" Style="{DynamicResource AnimatedCoverBrush}" Tag="False" Visibility="Collapsed" >
+						<Border x:Name="MainBorder" Opacity="0" CornerRadius="3" Style="{DynamicResource AnimatedCoverBrush}" Tag="False" Visibility="Collapsed" >
 							</Border>
 								
 						<Border x:Name="FlashFocus" Opacity="0" CornerRadius="0" Style="{DynamicResource AnimatedFlashFocus}" Tag="False" Visibility="Collapsed" />
@@ -34,18 +34,27 @@
 					
 						<StackPanel Margin="0,6,0,0" Orientation="Horizontal">
 							
-							 <Grid x:Name="GamePlatform" Height="27" Visibility="Collapsed" HorizontalAlignment="Left">
+<!-- 							<Grid x:Name="GamePlatform" Height="27" HorizontalAlignment="Left">
 								<Grid.OpacityMask>
 									<VisualBrush Visual="{Binding ElementName=Mask}" RenderOptions.BitmapScalingMode="LowQuality"/>
 								</Grid.OpacityMask>
 									<Border Name="Mask" Background="Black" CornerRadius="3"/>
-								    <Image x:Name="GamePlatformImage" Source="{ThemeFileBinding Game.Platforms/Name, PathFormat='Icons/Labels/{0}.png'}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderOptions.BitmapScalingMode="Fant"/>
-							</Grid>
+								    <Image x:Name="GamePlatformImage" Source="{ThemeFileBinding Game.Platforms[0].SpecificationId, PathFormat='Icons/Labels/{0}.png'}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderOptions.BitmapScalingMode="Fant"/>	
+							</Grid> -->
 							
-							<Border x:Name="GameSource" Visibility="Collapsed" Margin="5,0" Opacity="1" BorderBrush="{DynamicResource TextBrush}" BorderThickness="2" HorizontalAlignment="Left">
+							<!-- <Image x:Name="GamePlatformImage" Source="{ThemeFileBinding Game.Platforms[0].Name, PathFormat='Icons/Labels/{0}.png'}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderOptions.BitmapScalingMode="Fant"/> -->
+							
+							<Border x:Name="GamePlatform" Visibility="Collapsed" Margin="0,0,5,0" Opacity="1" Height="27" Background="{DynamicResource TextBrush}" CornerRadius="2"  HorizontalAlignment="Center">
+								<TextBlock x:Name="GamePlatformTitle" Text="{Binding Platforms, Converter={StaticResource ListToStringConverter}}" TextTrimming="CharacterEllipsis" Margin="8,1,8,3"
+								Foreground="{DynamicResource TextBrushDark}"
+								FontSize="12"  FontWeight="SemiBold"
+								TextAlignment="Center" VerticalAlignment="Center"/>
+							</Border>								
+							
+							<Border x:Name="GameSource" Visibility="Collapsed" Margin="0" Opacity="1" BorderBrush="{DynamicResource TextBrush}" BorderThickness="2" HorizontalAlignment="Left">
 								<TextBlock x:Name="GameSourceTitle" Text="{Binding Source}" TextTrimming="CharacterEllipsis" Margin="8,1,8,3"
 								Foreground="{DynamicResource TextBrush}"
-								FontSize="12"  FontWeight="Bold"
+								FontSize="12"  FontWeight="SemiBold"
 								TextAlignment="Left" VerticalAlignment="Center"/>
 							</Border>						
 
@@ -99,9 +108,13 @@
 							<Setter Property="Visibility" Value="Collapsed" TargetName="GameSource" />
                         </DataTrigger>						
 
-						<DataTrigger Binding="{Binding ElementName=GamePlatformImage, Path=Source}" Value="{x:Null}">
+<!-- 						<DataTrigger Binding="{Binding ElementName=GamePlatformImage, Path=Source}" Value="{x:Null}">
 							<Setter Property="Visibility" Value="Collapsed" TargetName="GamePlatform" />
-						</DataTrigger>
+						</DataTrigger> -->		
+
+						<DataTrigger Binding="{Binding ElementName=GamePlatformTitle, Path=Text}" Value="">
+							<Setter Property="Visibility" Value="Collapsed" TargetName="GamePlatform" />
+                        </DataTrigger>						
 
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
