@@ -25,6 +25,7 @@
     
     <Color x:Key="ControlBackgroundColor">#222328</Color>
 	<Color x:Key="ControlBackgroundColorLight">#e0e0e0</Color>
+	<Color x:Key="ControlBackgroundColorMid">#2B2C30</Color>
     <Color x:Key="ControlBackgroundColorDark">#171717</Color>
 
 	<Color x:Key="TextColor">#f5f5f5</Color>
@@ -35,7 +36,7 @@
     <SolidColorBrush x:Key="GlyphBrush" Color="{DynamicResource BorderLight}" />
     <SolidColorBrush x:Key="GlyphLightBrush" Color="{DynamicResource GlyphLightColor}" />
 	
-    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{DynamicResource ControlBackgroundColor}" />
+    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{DynamicResource ControlBackgroundColorMid}" />
 	<SolidColorBrush x:Key="ControlBackgroundLightBrush" Color="{DynamicResource ControlBackgroundColorLight}" />
     <SolidColorBrush x:Key="ControlBackgroundDarkBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
 	
@@ -88,6 +89,7 @@
 
 <!-- CoverBorder -->
 	<Style x:Key="AnimatedCoverBrush" TargetType="Border">
+		<Setter Property="BorderThickness" Value="3"/>
 		<Setter Property="BorderBrush">
 			<Setter.Value>
 				<LinearGradientBrush>
@@ -101,12 +103,12 @@
 			</Setter.Value>
 		</Setter>
 			<Style.Triggers>
-					<DataTrigger Binding="{Binding Categories[0].Name}" Value="Reskin">
+					<DataTrigger Binding="{Binding Game.Categories[0].Name}" Value="Reskin">
 						<Setter Property="BorderBrush">
 							<Setter.Value>
 								<LinearGradientBrush>
 									<GradientStop Color="{DynamicResource BorderDark}" Offset="0"/>
-									<GradientStop Color="{Binding Tags[0].Name}" Offset="1"/>
+									<GradientStop Color="{Binding Game.Tags[0].Name}" Offset="1"/>
 								<LinearGradientBrush.RelativeTransform>
 									<RotateTransform CenterX="0.5" CenterY="0.5" />
 								</LinearGradientBrush.RelativeTransform>
@@ -141,6 +143,8 @@
     </Style>     
 		
 	<Style x:Key="AnimatedBorderBrush" TargetType="Border">
+		<Setter Property="Margin" Value="-6"/>
+		<Setter Property="BorderThickness" Value="3"/>
 		<Setter Property="BorderBrush">
 			<Setter.Value>
 				<LinearGradientBrush>
@@ -210,8 +214,8 @@
 		<Setter.Value>
 			<LinearGradientBrush>
 				<GradientStop Color="Transparent" Offset="0"/>
-				<GradientStop Color="#40ffffff" Offset="0.1"/>
-				<GradientStop Color="#40ffffff" Offset="0.9"/>
+				<GradientStop Color="#40ffffff" Offset="0.2"/>
+				<GradientStop Color="#40ffffff" Offset="0.8"/>
 				<GradientStop Color="Transparent" Offset="1"/>
 			</LinearGradientBrush>
 		</Setter.Value>
@@ -237,6 +241,7 @@
 
 
 <Style x:Key="AnimatedFlashMenu" TargetType="Border">
+	<Setter Property="Margin" Value="5"/>
 	<Setter Property="Background">
 		<Setter.Value>
 			<LinearGradientBrush>
