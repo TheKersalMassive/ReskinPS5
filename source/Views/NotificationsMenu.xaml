@@ -14,9 +14,9 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid Background="{TemplateBinding Background}">                            
-						<Border x:Name="MainBorder" Margin="0" BorderThickness="3" Opacity="0" CornerRadius="2" Style="{DynamicResource AnimatedBorderBrush}" Tag="False" Visibility="Collapsed" >
+						<Border x:Name="MainBorder" Margin="0" Opacity="0" CornerRadius="2" Style="{DynamicResource AnimatedBorderBrush}" Tag="False" Visibility="Collapsed" >
 							</Border>
-						<Border x:Name="FlashMenuBorder" Margin="5" Style="{DynamicResource AnimatedFlashMenu}" Tag="False" Visibility="Collapsed">
+						<Border x:Name="FlashMenuBorder" Style="{DynamicResource AnimatedFlashMenu}" Tag="False" Visibility="Collapsed">
 							</Border>							
 						<TextBlock x:Name="NotificationsText" Style="{DynamicResource TextBlockBaseStyle}"
                                        Margin="10" 
@@ -43,9 +43,55 @@
     </Style>
     
     <Style x:Key="NotificationsMenuDismissButton" BasedOn="{StaticResource {x:Type ButtonEx}}" TargetType="ButtonEx">
-        <Setter Property="Margin" Value="20,5,20,30" />
-		<Setter Property="Opacity" Value="1" />
-		<Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+		<Setter Property="Height" Value="60" />
+		<Setter Property="Margin" Value="20,6" />	
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{TemplateBinding Background}">						
+						<Border CornerRadius="30" Opacity="0.4" Background="{DynamicResource ControlBackgroundBrush}"
+                                x:Name="MainBackground"/>
+						<Border x:Name="MainBorder"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                Style="{DynamicResource AnimatedBorderBrush}" Tag="False"
+                                CornerRadius="35" Visibility="Collapsed" />
+							   						
+							<TextBlock Style="{DynamicResource ButtonTextBlockBaseStyle}"
+									   Foreground="{TemplateBinding Foreground}" FontWeight="SemiBold"
+									   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+									   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+									   Margin="15,0">                            
+									<ContentPresenter />
+							</TextBlock>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled" Value="False">
+						   <Setter Property="Opacity" Value="0.5" />
+						</Trigger>
+																	
+						<Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+							<Setter Property="Tag" Value="True" TargetName="MainBorder" />										 
+							<Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+							<Setter Property="Opacity" Value="1" TargetName="MainBackground" />
+							<Setter Property="Background" Value="{DynamicResource ControlBackgroundLightBrush}" TargetName="MainBackground" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+							<Setter Property="Background" Value="{DynamicResource SelectionLightBrush}" TargetName="MainBackground" />
+                        </Trigger> 
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style x:Key="NotificationsMenuHeaderText" BasedOn="{StaticResource TextBlockBaseStyle}" TargetType="TextBlock" >

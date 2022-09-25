@@ -68,11 +68,7 @@
                                         </Style>
                                     </ContentControl.Style>
                                 </ContentControl>
-
-			   
-																																					  
-																													
-						   
+					   
 <!-- battery -->
                                 <TextBlock x:Name="PART_TextBatteryPercentage" Style="{DynamicResource TextBlockBaseStyle}" FontSize="26"
                                        VerticalAlignment="Center" Margin="0,0,20,0" 
@@ -126,10 +122,6 @@
                                     </Button.Content>
                                 </ButtonEx>
                             </Grid>
-<!-- GameStack							 -->
-<!-- 							<StackPanel x:Name="GameStack" Grid.Row="1" Visibility="Collapsed" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0">
-								<Image x:Name="GameLogo" Source="{Binding SelectedGame.IconObject}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="1" Stretch="Uniform" MaxWidth="400" MaxHeight="200" Margin="20,60" />
-							</StackPanel> -->
 
                             <DockPanel Grid.Row="1">
                                 <Filters x:Name="PART_ElemFilters"
@@ -165,19 +157,8 @@
                                 </TextBlock.Style>
                             </TextBlock>
 
-                            <Grid Grid.Row="2" 
-                              Height="100">
-							  
-							<Grid.Style>
-								<Style TargetType="Grid">
-									<Setter Property="Background" Value="Transparent" />
-									<Style.Triggers>
-										<DataTrigger Binding="{Binding ElementName=ToggleLayoutView, Path=IsFocused}" Value="True">
-											<Setter Property="Background" Value="#000004" />
-										</DataTrigger>
-									</Style.Triggers>
-								</Style>
-							</Grid.Style>	
+                            <Grid x:Name="BottomGridRow" Grid.Row="2" Height="100">
+							  	
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100" />
                                     <ColumnDefinition Width="Auto" />
@@ -186,17 +167,7 @@
                                     <ColumnDefinition Width="100" />
                                 </Grid.ColumnDefinitions>
 
-                                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
-									<StackPanel.Style>
-										<Style TargetType="StackPanel">
-											<Setter Property="Visibility" Value="Visible" />
-											<Style.Triggers>
-												<DataTrigger Binding="{Binding ElementName=ToggleLayoutView, Path=IsFocused}" Value="True">
-													<Setter Property="Visibility" Value="Hidden" />
-												</DataTrigger>
-											</Style.Triggers>
-										</Style>
-									</StackPanel.Style>					
+                                <StackPanel x:Name="ControllerButtons" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
 
                                     <!--Install-->
                                     <ButtonEx x:Name="PART_ButtonInstall"
@@ -267,7 +238,15 @@
                                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 
                     </Grid>
-		
+					
+				   <ControlTemplate.Triggers>
+						<DataTrigger Binding="{Binding ElementName=ToggleLayoutView, Path=IsFocused}" Value="True">
+							<Setter Property="Visibility" Value="Hidden" TargetName="ControllerButtons" />
+							<Setter Property="Opacity" Value="0" TargetName="PART_ElemExtraFilterActive" />
+							<Setter Property="Background" Value="#070707" TargetName="BottomGridRow" />
+						</DataTrigger>				
+					</ControlTemplate.Triggers>
+					
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

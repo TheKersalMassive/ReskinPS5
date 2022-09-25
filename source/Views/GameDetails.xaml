@@ -31,7 +31,7 @@
                                    Grid.ColumnSpan="3" Grid.RowSpan="4"
                                    x:Name="PART_ImageBackground" />
 
-                        <Border Background="{DynamicResource GameDetailsOverlay}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="4" >
+                        <Border Background="{DynamicResource GameDetailsOverlay}" Grid.ColumnSpan="3" Grid.RowSpan="4" >
 						 <Border.Style>
                                 <Style TargetType="Border">
                                     <Style.Triggers>
@@ -101,9 +101,9 @@
 										<TextBlock Style="{DynamicResource TextBlockBaseStyle}"
 										   Text="{DynamicResource LOCGamePlatformTitle}"
 										   Margin="0,0,0,5" FontWeight="SemiBold" FontSize="14"/>	
-										<Border x:Name="GamePlatformBox" Background="{DynamicResource TextBrush}" Height="{Binding Path=ActualHeight, ElementName=GameRelease}" Margin="0" CornerRadius="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+										<Border x:Name="GamePlatformBox" Background="Transparent" Height="{Binding Path=ActualHeight, ElementName=GameRelease}" BorderBrush="White" BorderThickness="2" Margin="0" CornerRadius="0" VerticalAlignment="Center" >
 													<TextBlock x:Name="GamePlatform" Text="{Binding Platforms, Converter={StaticResource ListToStringConverter}}" Margin="8,0,8,2"
-														Foreground="{DynamicResource TextBrushDark}"
+														Foreground="{DynamicResource TextBrush}"
 														FontSize="14"  FontWeight="SemiBold"
 														TextAlignment="Center" VerticalAlignment="Center">
 													</TextBlock>
@@ -148,8 +148,9 @@
 						</TextBlock.Style>
 					</TextBlock>																																										   
 
+<!-- Buttons -->
                             <StackPanel x:Name="GameButtons" Orientation="Horizontal" Margin="20" VerticalAlignment="Top" Grid.Row="3" Grid.Column="1">
-                                <ButtonEx x:Name="PART_ButtonContext" 
+                                <ButtonEx x:Name="PART_ButtonContext" Style="{DynamicResource GameActionButton}"
                                           Margin="0" Width="300" HorizontalContentAlignment="Center" />
                                 <ButtonEx x:Name="PART_ButtonOptions" Style="{DynamicResource GameOptionsButton}"
                                           Margin="20,0" HorizontalContentAlignment="Center" >
@@ -164,6 +165,9 @@
                     <ControlTemplate.Triggers>
                         <DataTrigger Binding="{Binding ElementName=GameSource, Path=Text}" Value="">
                             <Setter Property="Visibility" Value="Collapsed" TargetName="GameSourceInfo" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=GamePlatform, Path=Text}" Value="">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="GamePlatformInfo" />
                         </DataTrigger>						
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

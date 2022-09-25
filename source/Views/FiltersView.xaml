@@ -9,9 +9,9 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid Background="{TemplateBinding Background}">                        
-						<Border x:Name="MainBorder" Margin="0" BorderThickness="3" Opacity="0" CornerRadius="2" Style="{DynamicResource AnimatedBorderBrush}" Tag="False" Visibility="Collapsed" >
+						<Border x:Name="MainBorder" Margin="0" Opacity="0" CornerRadius="2" Style="{DynamicResource AnimatedBorderBrush}" Tag="False" Visibility="Collapsed" >
 							</Border>
-						<Border x:Name="FlashMenuBorder" Margin="5" Style="{DynamicResource AnimatedFlashMenu}" Tag="False" Visibility="Collapsed">
+						<Border x:Name="FlashMenuBorder" Style="{DynamicResource AnimatedFlashMenu}" Tag="False" Visibility="Collapsed">
 							</Border>	
 						<DockPanel Margin="15,0">
                             <TextBlock Text="&#xE974;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"
@@ -74,7 +74,7 @@
 						<Border x:Name="MainBorder" Margin="-6" 
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                 Style="{DynamicResource AnimatedBorderBrush}" Tag="False"
-                                BorderThickness="3" CornerRadius="30" Visibility="Collapsed" />
+                                CornerRadius="30" Visibility="Collapsed" />
 						<TextBlock Style="{DynamicResource ButtonTextBlockBaseStyle}"
                                    Foreground="{TemplateBinding Foreground}" FontWeight="SemiBold"
                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -123,9 +123,9 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid Background="{TemplateBinding Background}">
-						<Border x:Name="MainBorder" Margin="0" BorderThickness="3" Opacity="0" CornerRadius="2" Style="{DynamicResource AnimatedBorderBrush}" Tag="False" Visibility="Collapsed" >
+						<Border x:Name="MainBorder" Margin="0" Opacity="0" CornerRadius="2" Style="{DynamicResource AnimatedBorderBrush}" Tag="False" Visibility="Collapsed" >
 							</Border>
-						<Border x:Name="FlashMenuBorder" Margin="5" Style="{DynamicResource AnimatedFlashMenu}" Tag="False" Visibility="Collapsed">
+						<Border x:Name="FlashMenuBorder" Style="{DynamicResource AnimatedFlashMenu}" Tag="False" Visibility="Collapsed">
 							</Border>	
                             <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
                                        DockPanel.Dock="Left"
@@ -175,10 +175,28 @@
     <Style TargetType="{x:Type Filters}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Filters}">
-                    <StackPanel x:Name="PART_PanelItemsHost"
-								Margin="0,0" MinWidth="{DynamicResource FilterPanelWidth}"
-                                Background="{DynamicResource MainBackgroundBrush}" />
+				<ControlTemplate TargetType="{x:Type Filters}">
+                    <Border Background="{DynamicResource MainBackgroundBrush}"
+                            MinWidth="{DynamicResource FilterPanelWidth}">
+                        <ItemsControlEx x:Name="PART_ItemsHost" Focusable="False"
+                                        KeyboardNavigation.DirectionalNavigation="Once">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.Template>
+                                <ControlTemplate>
+                                    <ScrollViewer Focusable="False"
+                                                  HorizontalScrollBarVisibility="Disabled"
+                                                  VerticalScrollBarVisibility="Auto"
+                                                  CanContentScroll="True">
+                                        <ItemsPresenter />
+                                    </ScrollViewer>
+                                </ControlTemplate>
+                            </ItemsControl.Template>
+                        </ItemsControlEx>
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
