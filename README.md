@@ -1,5 +1,9 @@
 # ReskinPS5
-PS5 Reskin for Playnite V9
+PS5 Reskin for Playnite
+
+***Note: Filter Icons and Platform Labels are not currently working and will be fixed as part of a future Playnite v10.X update***
+
+---
 
 ![Main](https://raw.githubusercontent.com/TheKersalMassive/ReskinPS5/main/Media/screenshot_01.jpg)
 
