@@ -64,3 +64,10 @@ Packages:
       - Updated focus animations when hovering on game
       - Added Platform details to Game Details page
       - This is probably the last update until the next major version of Playnite
+  - Version: 1.8
+    RequiredApiVersion: 2.3.0
+    ReleaseDate: 2022-09-25
+    PackageUrl: https://github.com/TheKersalMassive/ReskinPS5/releases/download/v.18/RePS5_3d09a5d1-a183-49da-adb6-e78428f7d90e_1_8.pthm
+    Changelog:
+      - Updated to fix lag and add UI changes with Playnite V10
+      - Note: Filter Icons and Platform Labels are currently NOT working and will be fixed as part of a future Playnite v10.X update
