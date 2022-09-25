@@ -70,4 +70,4 @@ Packages:
     PackageUrl: https://github.com/TheKersalMassive/ReskinPS5/releases/download/v1.8/RePS5_3d09a5d1-a183-49da-adb6-e78428f7d90e_1_8.pthm
     Changelog:
       - Updated to fix lag and add UI changes with Playnite V10
-      - Note: Filter Icons and Platform Labels are currently NOT working and will be fixed as part of a future Playnite v10.X update
+      - Note... Filter Icons and Platform Labels are currently NOT working and will be fixed as part of a future Playnite v10.X update
