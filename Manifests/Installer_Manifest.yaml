@@ -56,7 +56,7 @@ Packages:
       - Updated to Game Details page format and layout
   - Version: 1.7
     RequiredApiVersion: 2.1.0
-    ReleaseDate: 2022-03-04
+    ReleaseDate: 2022-08-04
     PackageUrl: https://github.com/TheKersalMassive/ReskinPS5/releases/download/v1.7/RePS5_3d09a5d1-a183-49da-adb6-e78428f7d90e_1_7.pthm
     Changelog:
       - New Platform Labels (See Readme on Github for details)
@@ -67,7 +67,7 @@ Packages:
   - Version: 1.8
     RequiredApiVersion: 2.3.0
     ReleaseDate: 2022-09-25
-    PackageUrl: https://github.com/TheKersalMassive/ReskinPS5/releases/download/v.18/RePS5_3d09a5d1-a183-49da-adb6-e78428f7d90e_1_8.pthm
+    PackageUrl: https://github.com/TheKersalMassive/ReskinPS5/releases/download/v1.8/RePS5_3d09a5d1-a183-49da-adb6-e78428f7d90e_1_8.pthm
     Changelog:
       - Updated to fix lag and add UI changes with Playnite V10
       - Note: Filter Icons and Platform Labels are currently NOT working and will be fixed as part of a future Playnite v10.X update
