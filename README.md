@@ -1,8 +1,6 @@
 # ReskinPS5
 PS5 Reskin for Playnite
 
-***Note: Filter Icons and Platform Labels are not currently working and will be fixed as part of a future Playnite v10.X update***
-
 ---
 
 ![Main](https://raw.githubusercontent.com/TheKersalMassive/ReskinPS5/main/Media/screenshot_01.jpg)
@@ -140,7 +138,7 @@ This is based on the **'Source'** field, if you want to show 'Steam', 'Ubisoft' 
 
 
 ## Can you add support for any extensions or add-ons?
-No as I don't use any extensions, plugins or add-ons. However, you can always mod the theme if you prefer.
+No as I don't use any extensions (apart from Extra Metadata Loader), plugins or add-ons. However, you can always mod the theme if you prefer.
 
 
 ## I want to show game logos in the Game Details view
