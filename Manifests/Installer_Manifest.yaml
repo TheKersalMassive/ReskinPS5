@@ -1,6 +1,6 @@
 AddonId: 'RePS5_3d09a5d1-a183-49da-adb6-e78428f7d90e'
 Packages:
-  - Version: 1.0.0
+  - Version: 1.0
     RequiredApiVersion: 2.0.0
     ReleaseDate: 2021-10-20
     PackageUrl: https://github.com/TheKersalMassive/ReskinPS5/releases/download/v1.0.0/RePS5_3d09a5d1-a183-49da-adb6-e78428f7d90e_1_0.pthm
@@ -71,3 +71,10 @@ Packages:
     Changelog:
       - Updated to fix lag and add UI changes with Playnite V10
       - Note... Filter Icons and Platform Labels are currently NOT working and will be fixed as part of a future Playnite v10.X update
+  - Version: 1.9
+    RequiredApiVersion: 2.3.0
+    ReleaseDate: 2022-10-04
+    PackageUrl: https://github.com/TheKersalMassive/ReskinPS5/releases/download/v1.9/RePS5_3d09a5d1-a183-49da-adb6-e78428f7d90e_1_9.pthm
+    Changelog:
+      - Updated Game Menu and Platform label to match Source label styling
+      - Note... Platform Labels are being reworked and will be in next update
