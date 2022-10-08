@@ -75,24 +75,28 @@ XCloud
 ```
 
 ## How I do get platform label on the game cover?
-You must ensure you have the following Platforms assigned to a game Playnite:
+You must ensure you have the specified the following Platforms in your Libary Manager in Desktop mode 
+
+To set a Platform Specification, go to:    
+*Library Manager > Platforms > Platform Specification*
+
 ```
+Microsoft XBOX
+Microsoft XBOX 360
+Microsoft XBOX One
+Microsoft XBOX Series
+Nintendo GameCube
 Nintendo Switch
-Nintendo Wii U
 Nintendo Wii
-Playstation 2
-Playstation 3
-Playstation 4
-Playstation 5
-Playstation
-Playstation Portable
-Playstation Vita
-PSOne
+Nintendo Wii U
+Sony Playstation 2
+Sony Playstation 3
+Sony Playstation 4
+Sony Playstation 5
+Sony Playstation
+Sony Playstation Portable
+Sony Playstation Vita
 Sega Dreamcast
-XBOX Games Pass
-XBOX Series X
-XBOX One
-XBOX
 ```
 
 ## I don't like the labels - How do I remove them?
