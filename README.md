@@ -9,7 +9,9 @@ PS5 Reskin for Playnite
 
 ![Border](https://raw.githubusercontent.com/TheKersalMassive/ReskinPS5/main/Media/custom_02.jpg)
 
+<!--  
 ![Labels](https://raw.githubusercontent.com/TheKersalMassive/ReskinPS5/main/Media/labels_01.jpg)
+-->
 
 # FAQ
 
@@ -74,6 +76,7 @@ XBOX
 XCloud
 ```
 
+<!-- 
 ## How I do get platform label on the game cover?
 You must ensure you have the specified the following Platforms in your Libary Manager in Desktop mode 
 
@@ -104,6 +107,7 @@ You can delete the labels in the theme installation folder under ***\Icons\Label
 
 To open the theme installation folder go to:
 *Add-ons (F9) > Installed > Themes Fullscreen > Reskin PS5 > Installation Folder*
+-->
 
 ## I don't see an icon or label that I want?
 You have two options:
