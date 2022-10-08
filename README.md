@@ -118,20 +118,14 @@ Note: Custom border colours only work if you have one single tag assigned to a g
 
 ![image](https://user-images.githubusercontent.com/90322803/140609057-c76f0643-6c7b-40be-ba84-5bb4d434e4c5.png)
 
-2. Create a new category **Reskin** or Assign it if already created:
-
-![image](https://user-images.githubusercontent.com/90322803/140609072-a7d03430-86b0-4978-b1b3-a538728247bb.png)
+2. Create a new category **#Reskin** or Assign it if already created:
 
 3. Edit your game(s) and add a *'Tag'* of the colour you want for your game(s).
-- For example, I want a red border, so I add a **Red** tag:
+- For example, I want a border with the colour **[Crimson](https://www.color-hex.com/color/dc143c)**  ... so I add a **#DC143C** tag:
 
-![image](https://user-images.githubusercontent.com/90322803/140609117-327d217d-b20e-4847-af96-03d36d94f845.png)
+![image](https://user-images.githubusercontent.com/90322803/194699635-4d295c4c-bdee-425e-b690-3fb9ad3d4818.png)
 
-You can choose from the below colours as tags:
-
-![image](https://user-images.githubusercontent.com/90322803/140609155-4e22467c-489a-4801-9097-f1c252ab7470.png)
-
-*Note: Previously supported XBOX and Nintendo categories in v1.1 no longer work in V1.2 and above*
+You can choose any hex color from the site **[Color Hex](https://www.color-hex.com)**
 
 ## How do I get the box above the game title when a game is selected?
 This is based on the **'Source'** field, if you want to show 'Steam', 'Ubisoft' or 'Yuzu' as in the above screenshot, you will need to set these sources in the source field of your game(s).
