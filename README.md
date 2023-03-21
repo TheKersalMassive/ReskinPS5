@@ -8,10 +8,9 @@ PS5 Reskin for Playnite
 ![Game](https://user-images.githubusercontent.com/90322803/156723512-9a938bc5-0990-460e-a139-f0ace105d9e5.jpg)
 
 ![Border](https://raw.githubusercontent.com/TheKersalMassive/ReskinPS5/main/Media/custom_02.jpg)
-
-<!--  
+  
 ![Labels](https://raw.githubusercontent.com/TheKersalMassive/ReskinPS5/main/Media/labels_01.jpg)
--->
+
 
 # FAQ
 
@@ -51,6 +50,7 @@ Playstation
 PSOne
 PSP
 PS Vita
+Quest VR
 Prime Gaming
 Rockstar
 Sega
@@ -138,6 +138,17 @@ You can choose any hex color from the site **[Color Hex](https://www.color-hex.c
 ## How do I get the box above the game title when a game is selected?
 This is based on the **'Source'** field, if you want to show 'Steam', 'Ubisoft' or 'Yuzu' as in the above screenshot, you will need to set these sources in the source field of your game(s).
 
+## How do I get show a platform icon on my game covers?
+
+![image](https://user-images.githubusercontent.com/90322803/226671632-87a837a6-96bc-45a9-a03e-159edef8b70c.png)
+
+You will need to add an platform icon in the Library Manager in Desktop mode:
+
+![image](https://user-images.githubusercontent.com/90322803/226670969-70eb8bc7-251c-48d8-9810-9f3826fc6e92.png)
+
+There are some example labels in the Reskin PS5 theme folder under ***\Icons\Labels*** folder which you can use that are in the example screenshots below:
+
+![image](https://user-images.githubusercontent.com/90322803/226670313-ba90f42a-7b55-4f6b-ad83-2bb17ffe26f2.png)
 
 ## Can you add support for any extensions or add-ons?
 No as I don't use any extensions (apart from Extra Metadata Loader), plugins or add-ons. However, you can always mod the theme if you prefer.
