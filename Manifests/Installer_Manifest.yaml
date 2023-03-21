@@ -87,3 +87,11 @@ Packages:
       - Help & Game Menus updated
       - Extra Meta Data Loader logos no longer have a fixed size and now resize properly as per the extension settings
       - Note... Platform Labels are being reworked and will be in next major update
+ - Version: 1.11
+    RequiredApiVersion: 2.5.0
+    ReleaseDate: 2023-03-21
+    PackageUrl: https://github.com/TheKersalMassive/ReskinPS5/releases/download/v1.11/RePS5_3d09a5d1-a183-49da-adb6-e78428f7d90e_1_11.pthm
+    Changelog:
+      - Fixed 'Minimise' on Main Menu
+      - Updated 'HDR' icon on the Game Menu
+      - Added Platform Icons, please see Readme to understand how to add platform labels in Library Manager
