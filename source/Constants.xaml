@@ -103,7 +103,7 @@
 			</Setter.Value>
 		</Setter>
 			<Style.Triggers>
-					<DataTrigger Binding="{Binding Game.Categories[0].Name}" Value="Reskin">
+					<DataTrigger Binding="{Binding Game.Categories[0].Name}" Value="#Reskin">
 						<Setter Property="BorderBrush">
 							<Setter.Value>
 								<LinearGradientBrush>
@@ -121,7 +121,7 @@
 					<BeginStoryboard Name="StartCoverBrush">
 						<Storyboard>
 						 <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="00:00:00">
-							<SplineThicknessKeyFrame KeyTime="00:00:00" Value="0" />
+							<SplineThicknessKeyFrame KeyTime="00:00:00" Value="6" />
 							<SplineThicknessKeyFrame KeyTime="00:00:00.3" Value="-6" />
 						 </ThicknessAnimationUsingKeyFrames>
 							<DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" BeginTime="0:0:0.1" Duration="0:0:0.3" />
